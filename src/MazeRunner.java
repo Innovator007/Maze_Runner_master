@@ -12,6 +12,12 @@ public class MazeRunner {       //start of Mazerunner class
         Maze myMap = new Maze();
         System.out.println("Welcome to Maze Runner!");   //greeting and welcoming to the game
         System.out.println("Here x indicates your current location:");    //showing user their current position
+        System.out.println("Some of the instructions are as follows:-");
+        System.out.println("To move right enter 'r'");
+        System.out.println("To move left enter 'l'");
+        System.out.println("To move up enter 'u'");
+        System.out.println("To move down enter 'd'");
+        System.out.println("To jump a pit enter 'y'")
         myMap.printMap();      //printing the maze
     }
 
@@ -93,10 +99,17 @@ public class MazeRunner {       //start of Mazerunner class
                     }
                 }
 
+            }  else if (userSelection.equalsIgnoreCase("R") && !myMap.canIMoveRight()) {
+                System.out.println("Sorry! You have hit a wall!");
+            } else if (userSelection.equalsIgnoreCase("L") && !myMap.canIMoveLeft()) {
+                System.out.println("Sorry! You have hit a wall!");
+            } else if (userSelection.equalsIgnoreCase("U") && !myMap.canIMoveUp()) {
+                System.out.println("Sorry! You have hit a wall!");
+            } else if (userSelection.equalsIgnoreCase("D") && !myMap.canIMoveDown()) {
+                System.out.println("Sorry! You have hit a wall!");
             } else {
-                System.out.println("Sorry,you have hit a wall!");
-            }
-            while (!(userSelection.equalsIgnoreCase("R") || userSelection.equalsIgnoreCase("L") || userSelection.equalsIgnoreCase("U") || userSelection.equalsIgnoreCase("D"))) {
+                System.out.println("Invalid Input!");
+            }while (!(userSelection.equalsIgnoreCase("R") || userSelection.equalsIgnoreCase("L") || userSelection.equalsIgnoreCase("U") || userSelection.equalsIgnoreCase("D"))) {
                 System.out.println("Invalid Input!");
                 System.out.println("Please enter a valid direction letter!");
                 userSelection = input.next();
@@ -168,10 +181,17 @@ public class MazeRunner {       //start of Mazerunner class
                             System.exit(0);
                         }
                     }
-                } else {
-                    System.out.println("Sorry,you have hit a wall!");
-                }
-                //input.close();
+                }  else if (userSelection.equalsIgnoreCase("R") && !myMap.canIMoveRight()) {
+                System.out.println("Sorry! You have hit a wall!");
+            } else if (userSelection.equalsIgnoreCase("L") && !myMap.canIMoveLeft()) {
+                System.out.println("Sorry! You have hit a wall!");
+            } else if (userSelection.equalsIgnoreCase("U") && !myMap.canIMoveUp()) {
+                System.out.println("Sorry! You have hit a wall!");
+            } else if (userSelection.equalsIgnoreCase("D") && !myMap.canIMoveDown()) {
+                System.out.println("Sorry! You have hit a wall!");
+            } else {
+                System.out.println("Invalid Input!");
+            }
             }
             count++;
             if (count == 25) {
